@@ -23,9 +23,21 @@
 </header>
 
 <section class="hero" id="top" aria-label="Intro">
-  <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="images/hero-video-poster.webp" aria-hidden="true">
-    <source src="video/hero-mobiel.mp4" type="video/mp4" media="(max-width: 760px)"><source src="video/hero.mp4" type="video/mp4">
-  </video>
+  <video class="hero-bg" id="heroVideo" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture preload="auto" poster="images/hero-video-poster.webp" src="video/hero.mp4" data-mobile="video/hero-mobiel.mp4" aria-hidden="true"></video>
+  <script>
+  (function(){
+    var v=document.getElementById('heroVideo'); if(!v) return;
+    if(window.matchMedia('(max-width: 760px)').matches){ v.src=v.getAttribute('data-mobile'); }
+    v.muted=true; v.defaultMuted=true; v.setAttribute('muted','');
+    function play(){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+    play();
+    v.addEventListener('loadeddata',play,{once:true});
+    v.addEventListener('canplay',play,{once:true});
+    document.addEventListener('visibilitychange',function(){ if(!document.hidden&&v.paused) play(); });
+    // Fallback (bijv. iOS energiebesparingsmodus): start bij eerste aanraking/scroll
+    ['touchstart','pointerdown','scroll','keydown'].forEach(function(e){ window.addEventListener(e,function(){ if(v.paused) play(); },{once:true,passive:true}); });
+  })();
+  </script>
   <div class="content"><div class="wrap">
     <div><span class="kicker">DJ · Producer · Zanger</span><h1>Van het eerste glas tot de laatste dans.</h1></div>
     <div class="side"><a class="btn-light" href="#boeken">Check je datum →</a><small>Feesten · events · samenwerkingen</small></div>
