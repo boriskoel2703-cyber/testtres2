@@ -36,14 +36,14 @@
   modal.addEventListener('click',function(e){if(e.target===modal||e.target.classList.contains('close'))closeM();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeM();document.body.classList.remove('menu-open');}});
   // Reviews-carrousel
-  var R=[["Vanaf het eerste nummer stond de dansvloer vol. Hij voelde precies aan wat onze gasten wilden.","Bruiloft","A"],
-  ["Tresor met de live saxofonist was het hoogtepunt van ons bedrijfsfeest. Collega's hebben het er nog steeds over.","Bedrijfsfeest","B"],
-  ["Fijne communicatie vooraf en een strak opgebouwde avond. Echt een aanrader.","Studentenfeest","C"],
-  ["Van rustige borrelmuziek naar een volle dansvloer, precies zoals we hadden gevraagd.","Verjaardag","D"]];
+  var R=[["Ruim op tijd, vooraf meegedacht met de locatie en precies de juiste muziek voor ons publiek. Absoluut een aanrader!","30e verjaardag","V","Vincent"],
+  ["Van een mellow begin naar een volle dansvloer. Zelfs de meest verlegen collega's gingen los. Een echte aanrader!","Bedrijfsfeest","C","Camila"],
+  ["Goed aangevoeld wat er gedraaid moest worden, verzoekjes konden makkelijk tussendoor. Jong en oud(er) danste volop!","Feest","G","Gloria"],
+  ["Leuke interactie en volledig voldaan aan onze verwachtingen. Deze DJ moet je hebben voor een topfeest!","Verjaardag","N","Nick"]];
   var track=document.getElementById('rtrack'),dots=document.getElementById('rdots'),page=0,timer;
   function per(){return 2;}
   function pages(){return Math.ceil(R.length/per());}
-  function card(r,i){return '<div class="rcard '+(i%2?'b':'a')+'"><div class="st" aria-label="5 sterren">★★★★★</div><p>“'+r[0]+'”</p><div class="who"><span class="av">'+r[2]+'</span><span><b>[Naam]</b> · '+r[1]+'</span></div></div>';}
+  function card(r,i){return '<div class="rcard '+(i%2?'b':'a')+'"><div class="st" aria-label="5 sterren">★★★★★</div><p>“'+r[0]+'”</p><div class="who"><span class="av">'+r[2]+'</span><span><b>'+r[3]+'</b> · '+r[1]+'</span></div></div>';}
   function render(anim){var n=per(),s=page*n,html='';for(var i=0;i<n;i++){var r=R[(s+i)%R.length];html+=card(r,i);}
     if(anim&&!reduce){track.querySelectorAll('.rcard').forEach(function(c){c.classList.add('out')});setTimeout(function(){track.innerHTML=html;},250);}else track.innerHTML=html;
     var d='';for(var p=0;p<pages();p++)d+='<span class="'+(p===page?'on':'')+'"></span>';dots.innerHTML=d;}
