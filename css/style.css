@@ -85,9 +85,12 @@ nav .mbtn:after{display:none}
 .muziek .label{color:#FFE6D0}
 .muziek h2{margin:0;font-size:clamp(52px,7vw,96px);line-height:.9;letter-spacing:-.035em;font-weight:800}
 .muziek .spotify-wrap{position:relative;width:100%;max-width:420px;border-radius:14px;overflow:hidden;isolation:isolate;box-shadow:0 18px 40px -12px rgba(60,12,0,.55),0 0 0 1px rgba(255,230,208,.18)}
-.muziek .spotify{width:100%;height:352px;border:0;background:#7A3A08;display:block;filter:brightness(2.1) contrast(.95)}
-/* Spotify kleurt de artiest-embed blauw (uit de profielfoto); deze laag maakt hem oranje. Klikken gaan erdoorheen. */
-.muziek .spotify-wrap::after{content:"";position:absolute;inset:0;background:#EC7203;mix-blend-mode:color;pointer-events:none}
+.muziek .spotify{width:100%;height:352px;border:0;background:#C25C08;display:block}
+/* Spotify kleurt de artiest-embed blauw (uit de profielfoto). Twee lagen maken hem huisstijl-oranje;
+   de profielfoto (16px van boven/links, 112x112) blijft uitgespaard. Klikken gaan erdoorheen. */
+.muziek .spotify-wrap::before,.muziek .spotify-wrap::after{content:"";position:absolute;inset:0;pointer-events:none;clip-path:polygon(evenodd,0 0,100% 0,100% 100%,0 100%,0 0,16px 16px,128px 16px,128px 128px,16px 128px,16px 16px)}
+.muziek .spotify-wrap::before{background:#6A6A6A;mix-blend-mode:screen}
+.muziek .spotify-wrap::after{background:#EC7203;mix-blend-mode:color}
 .muziek .cutout{position:absolute;z-index:2;right:max(0px,calc((100vw - 1120px)/2));bottom:0;height:clamp(300px,40vw,520px);width:auto}
 @media (max-width:760px){.muziek .inner{min-height:0;padding-bottom:300px}.muziek .cutout{right:0;height:300px}}
 
