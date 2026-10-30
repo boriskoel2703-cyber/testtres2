@@ -125,7 +125,7 @@ nav .mbtn:after{display:none}
 .ev .cta.p{color:#9AA0B8;background:none;padding:9px 0;font-weight:600}
 @media (max-width:760px){.ev{grid-template-columns:56px minmax(0,1fr) auto;gap:14px}}
 /* REVIEW */
-.review{position:relative;background:var(--zand);overflow:hidden;clip-path:polygon(0 clamp(30px,5vw,60px),100% 0,100% calc(100% - clamp(30px,5vw,60px)),0 100%)}
+.review{position:relative;background:var(--zand);overflow:hidden}
 .review .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:30px;align-items:end}
 .review .txt{display:flex;flex-direction:column;gap:20px;padding:clamp(90px,10vw,130px) 0}
 .review .label{color:#0E43FF}
