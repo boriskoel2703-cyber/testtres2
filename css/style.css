@@ -268,3 +268,7 @@ footer .bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wra
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (max-width:760px){.ticker{height:42px;top:calc(-1.83vw - 21px)}.ticker-track{gap:20px;padding-left:20px}.ticker-track span{font-size:14px}}
 @media (prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+
+/* Knoppen: subtiel lichter oranje rechtsboven, zoals het verloop in het logo */
+.btn,nav .mbtn,.hero .btn-light,.ev .cta,.cbtn.main,.soc a,.rctrl button.next{background:linear-gradient(to top right,#EC7203 45%,#F7962A 100%)}
+.btn:hover,nav .mbtn:hover,.hero .btn-light:hover,.ev .cta:hover,.cbtn.main:hover,.soc a:hover,.rctrl button.next:hover{background:linear-gradient(to top right,#D46502 45%,#E9851C 100%)}
