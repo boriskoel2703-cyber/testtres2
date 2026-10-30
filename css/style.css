@@ -84,7 +84,7 @@ nav .mbtn:after{display:none}
 .muziek .text{position:relative;z-index:2;padding:clamp(30px,4vw,60px) 0 clamp(48px,6vw,80px);max-width:420px;display:flex;flex-direction:column;gap:18px}
 .muziek .label{color:#FFE6D0}
 .muziek h2{margin:0;font-size:clamp(52px,7vw,96px);line-height:.9;letter-spacing:-.035em;font-weight:800}
-.muziek .spotify{width:100%;max-width:420px;height:352px;border:0;border-radius:14px;background:#121212;display:block}
+.muziek .spotify{width:100%;max-width:420px;height:352px;border:0;border-radius:14px;background:#9E2A06;display:block;box-shadow:0 18px 40px -12px rgba(60,12,0,.55),0 0 0 1px rgba(255,230,208,.18)}
 .muziek .cutout{position:absolute;z-index:2;right:max(0px,calc((100vw - 1120px)/2));bottom:0;height:clamp(300px,40vw,520px);width:auto}
 @media (max-width:760px){.muziek .inner{min-height:0;padding-bottom:300px}.muziek .cutout{right:0;height:300px}}
 
