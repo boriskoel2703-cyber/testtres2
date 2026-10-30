@@ -8,8 +8,21 @@
   var burger=document.querySelector('.burger');
   burger.addEventListener('click',function(){var o=document.body.classList.toggle('menu-open');burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Menu sluiten':'Menu openen');});
   document.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');});});
+  // Tekst-animaties: koppen woord voor woord, overige tekst gestaffeld
+  function splitWords(el){var n=0;(function walk(node){Array.prototype.slice.call(node.childNodes).forEach(function(c){
+      if(c.nodeType===3){var parts=c.textContent.split(/(\s+)/),f=document.createDocumentFragment();
+        parts.forEach(function(t){if(!t)return;if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(t));return;}
+          var w=document.createElement('span');w.className='w';var i=document.createElement('span');i.className='wi';i.style.setProperty('--i',n++);i.textContent=t;w.appendChild(i);f.appendChild(w);});
+        node.replaceChild(f,c);}
+      else if(c.nodeType===1)walk(c);});})(el);el.classList.add('split');}
+  var hero=document.querySelector('.hero h1');
+  if(hero){splitWords(hero);setTimeout(function(){hero.classList.add('in')},150);}
+  var txt=document.querySelectorAll('.mid h2, .mid .label, .mid p, .mid .link, .video .head h2, .video .head .label, .video .head .link, .agenda-s .head h2, .agenda-s .head .label, .agenda-s .head .link, .review .txt>.label, .review .txt>h2, .review .rctrl, .review .all, .ctab .label, .ctab h2, .ctab p, .ctab .cbtns, .fcols>div');
+  var groups=new Map();
+  txt.forEach(function(e){if(e.tagName==='H2')splitWords(e);else e.classList.add('tx');
+    var g=e.closest('.wrap,.text,.fcols')||e.parentNode,k=groups.get(g)||0;groups.set(g,k+1);e.style.setProperty('--d',(k*0.09)+'s');e.classList.add('rv-t');});
   // Scroll-animaties
-  var els=document.querySelectorAll('.rv');
+  var els=document.querySelectorAll('.rv,.rv-t');
   if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
   else{var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
     document.querySelectorAll('.ev.rv').forEach(function(e,i){e.style.setProperty('--d',(i*0.07)+'s')});
