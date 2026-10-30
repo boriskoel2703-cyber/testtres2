@@ -16,16 +16,16 @@
         node.replaceChild(f,c);}
       else if(c.nodeType===1)walk(c);});})(el);el.classList.add('split');}
   var hero=document.querySelector('.hero h1');
-  if(hero){splitWords(hero);setTimeout(function(){hero.classList.add('in')},150);}
+  if(hero){splitWords(hero);requestAnimationFrame(function(){hero.classList.add('in')});}
   var txt=document.querySelectorAll('.mid h2, .mid .label, .mid p, .mid .link, .video .head h2, .video .head .label, .video .head .link, .agenda-s .head h2, .agenda-s .head .label, .agenda-s .head .link, .review .txt>.label, .review .txt>h2, .review .rctrl, .review .all, .ctab .label, .ctab h2, .ctab p, .ctab .cbtns, .fcols>div');
   var groups=new Map();
   txt.forEach(function(e){if(e.tagName==='H2')splitWords(e);else e.classList.add('tx');
-    var g=e.closest('.wrap,.text,.fcols')||e.parentNode,k=groups.get(g)||0;groups.set(g,k+1);e.style.setProperty('--d',(k*0.09)+'s');e.classList.add('rv-t');});
+    var g=e.closest('.wrap,.text,.fcols')||e.parentNode,k=groups.get(g)||0;groups.set(g,k+1);e.style.setProperty('--d',(k*0.05)+'s');e.classList.add('rv-t');});
   // Scroll-animaties
   var els=document.querySelectorAll('.rv,.rv-t');
   if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
-  else{var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.ev.rv').forEach(function(e,i){e.style.setProperty('--d',(i*0.07)+'s')});
+  else{var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:0,rootMargin:'0px 0px 12% 0px'});
+    document.querySelectorAll('.ev.rv').forEach(function(e,i){e.style.setProperty('--d',(i*0.04)+'s')});
     els.forEach(function(e){io.observe(e)});}
   // Video-lightbox: zet per clip de YouTube-ID in data-yt
   var modal=document.getElementById('vmodal'),vbody=document.getElementById('vbody');
