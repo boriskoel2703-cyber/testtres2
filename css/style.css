@@ -66,7 +66,7 @@ nav .mbtn:after{display:none}
 .bio{position:relative;background:linear-gradient(180deg,var(--creme) 0%,var(--creme) 25%,var(--zand) 60%);padding:clamp(56px,8vw,110px) 0 clamp(40px,6vw,80px)}
 .bio .grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,380px);gap:clamp(36px,6vw,90px);align-items:center}
 .bio h2{margin:18px 0 22px;font-size:clamp(30px,3.4vw,44px);line-height:1.08;letter-spacing:-.025em;font-weight:800}
-.bio h2 span{color:#EC7203}
+.bio h2{color:var(--ink)}.bio h2 .hl,.bio h2 .hl span{color:#EC7203}
 .bio p{margin:0 0 16px;font-size:clamp(15px,1.25vw,17px);line-height:1.7;color:var(--muted);max-width:560px}
 .bio .link{display:inline-block;margin-top:10px}
 .polaroid-wrap{display:flex;justify-content:center;padding:20px 0}
