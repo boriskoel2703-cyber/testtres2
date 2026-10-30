@@ -42,6 +42,8 @@ nav .mbtn:after{display:none}
 
 /* HERO */
 .hero{position:relative;height:min(88vh,820px);min-height:520px;overflow:hidden;color:#fff;background:var(--ink)}
+.hero>.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+@media (prefers-reduced-motion:reduce){.hero>.hero-bg{display:none}.hero{background:var(--ink) url(../images/hero-video-poster.jpg) 50% 40%/cover no-repeat}}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 30%;animation:heroZoom 14s ease-out both}
 @keyframes heroZoom{from{transform:scale(1.12)}to{transform:scale(1)}}
 .hero .content{animation:heroIn 1s .2s cubic-bezier(.2,.8,.2,1) both}
