@@ -89,8 +89,8 @@ nav .mbtn:after{display:none}
 /* Spotify kleurt de artiest-embed blauw (uit de profielfoto). Twee lagen maken hem huisstijl-oranje;
    de profielfoto (16px van boven/links, 112x112) blijft uitgespaard. Klikken gaan erdoorheen. */
 .muziek .spotify-wrap::before,.muziek .spotify-wrap::after,.muziek .spotify-wrap .tint{content:"";position:absolute;inset:0;pointer-events:none;clip-path:polygon(evenodd,0 0,100% 0,100% 100%,0 100%,0 0,16px 16px,128px 16px,128px 128px,16px 128px,16px 16px)}
-.muziek .spotify-wrap::before{background:#333333;mix-blend-mode:screen;z-index:1}
-.muziek .spotify-wrap::after{background:#E26206;mix-blend-mode:color;z-index:2}
+.muziek .spotify-wrap::before{background:#424242;mix-blend-mode:screen;z-index:1}
+.muziek .spotify-wrap::after{background:#E66A06;mix-blend-mode:color;z-index:2}
 .muziek .spotify-wrap .tint{background:#EE6A06;mix-blend-mode:soft-light;z-index:3}
 .muziek .cutout{position:absolute;z-index:2;right:max(0px,calc((100vw - 1120px)/2));bottom:0;height:clamp(300px,40vw,520px);width:auto}
 @media (max-width:760px){.muziek .inner{min-height:0;padding-bottom:300px}.muziek .cutout{right:0;height:300px}}
