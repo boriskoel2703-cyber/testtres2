@@ -428,3 +428,6 @@ button{font-family:inherit}
 .pagenda .wrap{padding-top:clamp(48px,7vw,100px)}
 /* "Besloten" is geen knop: geen hover-vlak, geen verschuiving */
 .ev .cta.p,.ev .cta.p:hover{background:none;box-shadow:none;transform:none;cursor:default;padding:9px 0}
+/* Footer-links: klik- en hovervlak alleen op het woord */
+.fcol{align-items:flex-start}
+.fcol a{display:inline-block}
