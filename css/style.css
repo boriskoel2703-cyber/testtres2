@@ -426,3 +426,5 @@ button{font-family:inherit}
 /* Ritme: eerste section na een pagina-hero */
 .pstory,.pfeat,.pbook{padding-top:clamp(48px,7vw,100px)}
 .pagenda .wrap{padding-top:clamp(48px,7vw,100px)}
+/* "Besloten" is geen knop: geen hover-vlak, geen verschuiving */
+.ev .cta.p,.ev .cta.p:hover{background:none;box-shadow:none;transform:none;cursor:default;padding:9px 0}
