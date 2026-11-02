@@ -305,3 +305,108 @@ footer .bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wra
 html,body{overflow-x:clip}
 @supports not (overflow:clip){html,body{overflow-x:hidden}}
 @media (max-width:760px){.agenda-s .head{flex-direction:column;align-items:flex-start;gap:12px}}
+
+/* ===== SUBPAGINA'S ===== */
+nav a[aria-current="page"]:after{right:0}
+/* Pagina-hero */
+.phero{position:relative;height:min(68vh,600px);min-height:440px;overflow:hidden;color:#fff;background:var(--ink)}
+.phero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:heroZoom 14s ease-out both}
+.phero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,8,2,.55) 0%,rgba(20,8,2,0) 26%,rgba(20,8,2,0) 40%,rgba(20,8,2,.72) 100%),linear-gradient(90deg,rgba(20,8,2,.6) 0%,rgba(20,8,2,.12) 65%)}
+.phero .content{position:absolute;z-index:2;left:0;right:0;bottom:clamp(80px,10vw,140px);animation:heroIn 1s .15s cubic-bezier(.2,.8,.2,1) both}
+.phero .kicker{display:block;margin-bottom:14px;font-size:clamp(12px,1vw,14px);font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#FFD9B8}
+.phero h1{margin:0;font-size:clamp(40px,5.6vw,80px);font-weight:800;line-height:.98;letter-spacing:-.035em;max-width:15ch;text-shadow:0 2px 24px rgba(20,8,2,.45)}
+.phero p{margin:18px 0 0;max-width:520px;font-size:clamp(16px,1.4vw,19px);line-height:1.55;opacity:.92}
+.pdiag{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:calc(3.67vw + 1px);z-index:3;display:block;overflow:visible}
+.phero h1.split{text-shadow:none}.phero h1 .wi{text-shadow:0 2px 20px rgba(40,12,4,.45)}
+/* Verhaal (biografie) */
+.pstory{background:var(--creme);padding:clamp(48px,7vw,100px) 0 clamp(120px,14vw,190px)}
+.story{display:flow-root;max-width:1120px}
+.story h2{margin:16px 0 26px;font-size:clamp(30px,3.6vw,48px);line-height:1.06;letter-spacing:-.025em;font-weight:800;max-width:16ch}
+.story h2 .hl{color:#EC7203}
+.story p{margin:0 0 18px;font-size:clamp(16px,1.3vw,18px);line-height:1.75;color:var(--muted)}
+.sphoto{float:right;width:clamp(240px,30vw,380px);aspect-ratio:25/36;object-fit:cover;object-position:50% 20%;border-radius:22px;margin:-110px 0 24px clamp(28px,5vw,64px);box-shadow:0 22px 50px rgba(10,26,92,.16)}
+@media (max-width:760px){.sphoto{float:none;width:100%;aspect-ratio:4/5;margin:0 0 26px}}
+/* Oranje band met schuine randen */
+.obwrap{--c:clamp(40px,7vw,100px);position:relative;z-index:2;margin:calc(var(--c)*-1) 0}
+.oband{position:relative;color:#fff;background:#C7430B url(../images/oranje-muur.webp) center/cover;clip-path:polygon(0 var(--c),100% 0,100% calc(100% - var(--c)),0 100%);padding:calc(var(--c) + clamp(40px,6vw,80px)) 0}
+.obl{position:absolute;left:0;width:100%;height:var(--c);z-index:3;overflow:visible;pointer-events:none}
+.obl.top{top:-16px}.obl.bot{bottom:-16px}
+.oband .label{color:#FFE6D0}
+.oband h2{margin:14px 0 18px;font-size:clamp(34px,4.4vw,56px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.oband p{margin:0 0 14px;font-size:clamp(15px,1.3vw,18px);line-height:1.65;color:#FFF1E6;max-width:520px}
+.split2{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,70px);align-items:center}
+.split2.rev{grid-template-columns:minmax(0,1fr) minmax(0,420px)}
+.ophoto{margin:0;position:relative;border-radius:20px;overflow:hidden;border:5px solid #fff;box-shadow:0 24px 50px rgba(60,20,4,.35);aspect-ratio:4/5}
+.ophoto img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+.ophoto figcaption{position:absolute;left:12px;right:12px;bottom:12px;padding:7px 12px;border-radius:10px;background:rgba(10,26,92,.72);font-size:12px;font-weight:600}
+.wbtn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;margin-top:10px;border-radius:999px;background:#fff;color:#EC7203;font-size:15px;font-weight:800;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.wbtn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(60,20,4,.3)}
+.olinks{margin-top:18px}
+.olinks>div{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;border-top:1px solid rgba(255,255,255,.3)}
+.olinks b{font-size:clamp(20px,2vw,26px);font-weight:800}
+.obtn{display:inline-flex;align-items:center;height:42px;padding:0 20px;border-radius:999px;border:2px solid #fff;color:#fff;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+.obtn:hover{background:#fff;color:#EC7203}
+.ospot .spotify-wrap{position:relative;width:100%;border-radius:14px;overflow:hidden;isolation:isolate;box-shadow:0 24px 50px -12px rgba(40,10,0,.55),0 0 0 1px rgba(255,230,208,.18)}
+.ospot .spotify{width:100%;height:352px;border:0;background:#C2540A;display:block}
+.ospot .spotify-wrap::before,.ospot .spotify-wrap::after,.ospot .spotify-wrap .tint{content:"";position:absolute;inset:0;pointer-events:none;clip-path:polygon(evenodd,0 0,100% 0,100% 100%,0 100%,0 0,16px 16px,128px 16px,128px 128px,16px 128px,16px 16px)}
+.ospot .spotify-wrap::before{background:#424242;mix-blend-mode:screen;z-index:1}
+.ospot .spotify-wrap::after{background:#E66A06;mix-blend-mode:color;z-index:2}
+.ospot .spotify-wrap .tint{background:#EE6A06;mix-blend-mode:soft-light;z-index:3}
+.ospace{height:clamp(30px,4vw,50px);background:var(--creme)}
+@media (max-width:760px){.split2,.split2.rev{grid-template-columns:1fr}.ophoto{aspect-ratio:4/3}}
+/* Muziek: uitgelicht */
+.pfeat{background:var(--creme);padding:clamp(48px,7vw,100px) 0 clamp(120px,14vw,190px)}
+.pfeat h2{margin:12px 0 clamp(24px,3vw,36px);font-size:clamp(34px,4.4vw,56px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.fcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,24px)}
+.fcard{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 18px 40px rgba(10,26,92,.10);display:flex;flex-direction:column}
+.fimg{aspect-ratio:16/10;overflow:hidden}.fimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.fcard:hover .fimg img{transform:scale(1.05)}
+.fbody{padding:22px 24px 26px;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.fbody .label{color:#EC7203}.fbody .label.lb{color:#0E43FF}
+.fbody h3{margin:0;font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.fbody p{margin:0 0 8px;font-size:14px;line-height:1.5;color:var(--muted)}
+.cbtn.sm{height:44px;padding:0 20px;font-size:14px}
+@media (max-width:760px){.fcards{grid-template-columns:1fr}}
+.pvideo{margin-top:0}
+.pvideo>.seam{display:none}
+.pvideo .wrap{padding-top:clamp(110px,13vw,170px)}
+/* Agenda-pagina */
+.pagenda{background:var(--creme)}
+.pagenda .wrap{padding-top:clamp(40px,6vw,80px)}
+.month{margin-bottom:clamp(36px,5vw,56px)}
+.mhead{display:flex;align-items:center;gap:16px;margin:0 0 6px;font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-.02em}
+.mhead:after{content:"";flex:1;height:2px;background:var(--ink)}
+.fnote{margin:0;font-size:13px;color:#8A8FA8}
+/* Boeken-pagina */
+.pbook{background:var(--creme);padding:clamp(40px,6vw,80px) 0 clamp(70px,9vw,120px)}
+.bgrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,70px);align-items:start}
+.bsteps h2{margin:12px 0 18px;font-size:clamp(30px,3.4vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.bsteps ol{list-style:none;margin:0;padding:0;counter-reset:s}
+.bsteps li{counter-increment:s;display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:12px;padding:18px 0;border-top:1px solid #EBDCCD}
+.bsteps li:before{content:counter(s);grid-row:span 2;font-size:34px;font-weight:800;line-height:1;color:#EC7203}
+.bsteps li b{font-size:17px;font-weight:800}
+.bsteps li span{font-size:14px;line-height:1.5;color:var(--muted)}
+.binfo{display:flex;flex-direction:column;gap:8px;padding:20px 0;border-top:2px solid var(--ink);font-size:15px;color:var(--muted)}
+.binfo b{font-size:17px;color:var(--ink)}
+.binfo a{color:#EC7203;font-weight:700}
+.bform{background:#fff;border-radius:24px;padding:clamp(24px,3vw,36px);box-shadow:0 26px 60px rgba(10,26,92,.12);display:flex;flex-direction:column;gap:16px}
+.bform h2{margin:0 0 4px;font-size:clamp(24px,2.4vw,32px);font-weight:800;letter-spacing:-.02em}
+.bform .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bform label{text-transform:none;letter-spacing:0;font-size:13px;font-weight:700;color:var(--ink)}
+.bform label i{font-style:normal;font-weight:500;color:#8A8FA8}
+.bform input,.bform select,.bform textarea{font:inherit;font-size:15px;font-weight:500;color:var(--ink);background:var(--creme);border:1.5px solid #EBDCCD;border-radius:12px;padding:12px 14px;outline:none;width:100%;box-sizing:border-box;transition:border-color .2s,box-shadow .2s}
+.bform input:focus,.bform select:focus,.bform textarea:focus{border-color:#EC7203;box-shadow:0 0 0 3px rgba(236,114,3,.15)}
+.bform fieldset{border:0;margin:0;padding:0}
+.bform legend{font-size:13px;font-weight:700;margin-bottom:8px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.bform .chip{display:inline-flex;cursor:pointer}
+.bform .chip input{position:absolute;opacity:0;width:1px;height:1px}
+.bform .chip span{padding:10px 16px;border-radius:999px;border:1.5px solid #EBDCCD;font-size:14px;font-weight:700;transition:background .2s,border-color .2s,color .2s}
+.bform .chip input:checked+span{background:#EC7203;border-color:#EC7203;color:#fff}
+.bform .chip input:focus-visible+span{box-shadow:0 0 0 3px rgba(236,114,3,.3)}
+.fsend{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:4px}
+.fsend small{font-size:12px;line-height:1.5;color:#8A8FA8;max-width:220px}
+.bform button.cbtn{cursor:pointer;font-family:inherit}
+.fmsg{margin:0;padding:12px 14px;border-radius:12px;background:#FFF1E6;color:var(--ink);font-size:14px;font-weight:600}
+@media (max-width:760px){.bgrid{grid-template-columns:1fr}.bform .frow{grid-template-columns:1fr}.fsend{flex-direction:column;align-items:stretch}.fsend .cbtn{width:100%}}
+.endonly>.seamline{margin-top:0}
