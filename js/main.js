@@ -60,6 +60,6 @@
   // Boekingsformulier (nog te koppelen aan e-mail of een formulierdienst)
   var bf=document.getElementById('bform');
   if(bf){bf.addEventListener('submit',function(e){e.preventDefault();var m=bf.querySelector('.fmsg');
-    if(!bf.checkValidity()){m.textContent='Vul je naam, e-mail en soort aanvraag in.';m.hidden=false;var f=bf.querySelector(':invalid');if(f)f.focus();return;}
+    if(!bf.checkValidity()){m.textContent='Vul in wie je bent, je naam en je e-mail.';m.hidden=false;var f=bf.querySelector(':invalid');if(f)f.focus();return;}
     m.textContent='Dit formulier wordt nog gekoppeld. Mail of bel me voor nu direct via de gegevens hiernaast.';m.hidden=false;});}
 })();
