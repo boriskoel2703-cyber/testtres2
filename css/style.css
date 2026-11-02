@@ -319,7 +319,7 @@ nav a[aria-current="page"]:after{right:0}
 .pdiag{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:calc(3.67vw + 1px);z-index:3;display:block;overflow:visible}
 .phero h1.split{text-shadow:none}.phero h1 .wi{text-shadow:0 2px 20px rgba(40,12,4,.45)}
 /* Verhaal (biografie) */
-.pstory{background:var(--creme);padding:clamp(48px,7vw,100px) 0 clamp(10px,2vw,30px)}
+.pstory{background:var(--creme);padding:clamp(48px,7vw,100px) 0 clamp(120px,14vw,190px)}
 .story{display:flow-root;max-width:1120px}
 .story h2{margin:16px 0 26px;font-size:clamp(30px,3.6vw,48px);line-height:1.06;letter-spacing:-.025em;font-weight:800;max-width:16ch}
 .story h2 .hl{color:#EC7203}
